@@ -1,0 +1,86 @@
+generated: '2026-08-09'
+method: searched
+source: https://dara.causalens.com/docs/generated/dara/reference/create_dara_app/cli
+docs:
+- https://dara.causalens.com/docs/generated/dara/reference/create_dara_app/cli
+- https://dara.causalens.com/docs/generated/dara/docs/getting-started/local-setup
+- https://dara.causalens.com/docs/generated/dara/docs/quickstart
+clis:
+- name: create-dara-app
+  description: Project scaffolding CLI that bootstraps a new Dara Decision App.
+  package: create-dara-app
+  registry: pypi
+  install:
+  - pip install create-dara-app
+  - poetry add create-dara-app
+  commands:
+  - name: bootstrap
+    default: true
+    description: 'Create a new Decision App project. Runs automatically when no
+      subcommand is specified.'
+    arguments:
+    - name: directory
+      type: path
+      default: .
+      description: Target directory for project creation.
+    flags:
+    - name: --debug
+      type: flag
+      default: false
+      description: Enable debug logging.
+    - name: --no-install
+      type: flag
+      default: false
+      description: Skip dependency installation.
+    - name: --no-input
+      type: flag
+      default: false
+      description: Skip interactive prompts.
+    - name: --project-name
+      type: string
+      default: Decision App
+      description: Project name.
+    - name: --package-name
+      type: string
+      description: Python package name (e.g. my_decision_app).
+    - name: --overwrite-if-exists
+      type: flag
+      default: false
+      description: Overwrite existing directory contents.
+    - name: --packaging
+      type: choice
+      choices:
+      - pip
+      - poetry
+      default: poetry
+      description: Package manager to use.
+  global_flags:
+  - name: --version
+    description: Print the CLI version.
+- name: dara
+  description: 'Runtime CLI shipped with dara-core for running a Dara application
+    in development and production.'
+  package: dara-core
+  registry: pypi
+  install:
+  - pip install dara-core
+  commands:
+  - name: dara start
+    description: Start a Dara application.
+    flags:
+    - name: --reload
+      description: 'Reload on code change. Preserves browser auth sessions across
+        backend reloads via a local file-backed session store.'
+    - name: --dev-port
+      description: Override the Vite dev-server port.
+  - name: dara dev
+    description: Run the application in development mode.
+    flags:
+    - name: --port
+      description: Port for the dev server.
+  x-evidence:
+    source: https://raw.githubusercontent.com/causalens/dara/master/packages/dara-core/changelog.md
+    note: 'Commands and flags recorded from the dara-core changelog entries that
+      introduced them (1.29.6, 1.29.0). Not fabricated.'
+notes: 'The commercial decisionOS platform may ship additional tooling, but its
+  documentation is login-gated at docs.causalens.com and could not be read.'

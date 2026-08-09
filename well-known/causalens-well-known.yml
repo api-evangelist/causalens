@@ -1,0 +1,120 @@
+generated: '2026-08-09'
+method: probed
+source: direct HTTP probes of every causaLens host discovered in apis.yml and via DNS
+summary: 'No /.well-known/ document was found on any causaLens host. Two hosts —
+  docs.causalens.com and platform.causalens.com — return HTTP 200 for EVERY path,
+  including paths that cannot exist, because an unauthenticated request is answered
+  with the "causaLens Login - Authentication" HTML page rather than a redirect or a
+  404. Those 200s are therefore NOT evidence of a document and are recorded here as
+  soft_200_login_wall, not as hits. A control path was fetched on each host to prove
+  this.'
+x-soft-404-control:
+  method: 'Fetched a deliberately non-existent control path on each host and compared
+    the body to the claimed hits.'
+  hosts_with_soft_200:
+  - host: docs.causalens.com
+    control_url: https://docs.causalens.com/kinlane-control-not-a-real-path-9931
+    control_status: 200
+    control_body_signature: '<title>causaLens Login - Authentication</title>'
+    verdict: 'Every probed path returned byte-identical login HTML. All 200s discarded.'
+  - host: platform.causalens.com
+    control_url: https://platform.causalens.com/kinlane-control-9931
+    control_status: 200
+    control_body_signature: '<title>causaLens Login - Authentication</title>'
+    verdict: 'Same login wall. All 200s discarded.'
+  hosts_with_honest_404:
+  - dara.causalens.com
+  - causalai.causalens.com
+  - www.causalens.com
+  - studio-docs.causalens.com
+  - status.causalens.com
+hosts:
+- host: https://dara.causalens.com
+  role: open-source framework documentation
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/agent-card.json
+    status: 404
+  - path: /.well-known/agent.json
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+- host: https://www.causalens.com
+  role: corporate website
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/agent-card.json
+    status: 404
+  - path: /.well-known/agent.json
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+- host: https://causalai.causalens.com
+  role: marketing site (publishes llms.txt)
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/agent-card.json
+    status: 404
+  - path: /.well-known/agent.json
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+- host: https://studio-docs.causalens.com
+  role: causaLens Studio connectivity documentation
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/agent-card.json
+    status: 404
+  - path: /.well-known/agent.json
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+- host: https://docs.causalens.com
+  role: decisionOS product documentation (login-gated)
+  soft_200_login_wall: true
+  documents:
+  - path: /.well-known/security.txt
+    status: 200
+    verdict: soft_200_login_wall
+  - path: /.well-known/agent-card.json
+    status: 200
+    verdict: soft_200_login_wall
+  - path: /.well-known/agent.json
+    status: 200
+    verdict: soft_200_login_wall
+  - path: /.well-known/openid-configuration
+    status: 200
+    verdict: soft_200_login_wall
+  - path: /.well-known/api-catalog
+    status: 200
+    verdict: soft_200_login_wall
+  - path: /.well-known/ai-plugin.json
+    status: 200
+    verdict: soft_200_login_wall
+- host: https://platform.causalens.com
+  role: decisionOS product (login-gated)
+  soft_200_login_wall: true
+  documents:
+  - path: /.well-known/security.txt
+    status: 200
+    verdict: soft_200_login_wall
+documents_found: []
+security_txt: none

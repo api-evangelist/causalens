@@ -1,0 +1,72 @@
+generated: '2026-08-09'
+method: searched
+source: https://dara.causalens.com/docs/generated/dara/reference/dara/core/auth/routes
+docs:
+- https://dara.causalens.com/docs/generated/dara/reference/dara/core/auth/base
+- https://dara.causalens.com/docs/generated/dara/reference/dara/core/auth/basic
+- https://dara.causalens.com/docs/generated/dara/reference/dara/core/auth/definitions
+- https://dara.causalens.com/docs/generated/dara/reference/dara/core/auth/routes
+- https://dara.causalens.com/docs/generated/dara/docs/advanced/custom-endpoints
+scope: 'Dara open-source application framework. The commercial decisionOS platform''s
+  auth model is documented only behind the login wall at docs.causalens.com and is
+  therefore NOT described here.'
+summary: 'Dara applications authenticate with a bearer JWT session token carried in
+  the HTTP Authorization header, paired with a cookie-borne refresh token. Endpoints
+  registered through the dara.core.http decorators are authenticated by default
+  (authenticated=True), which attaches the framework security dependency; setting
+  authenticated=False opts an endpoint out. Dara ships pluggable auth backends,
+  including a basic username/password configuration and an OIDC integration.'
+security_schemes:
+- id: sessionToken
+  type: http
+  scheme: bearer
+  bearer_format: JWT
+  in: header
+  header: Authorization
+  description: 'Session JWT verified by the /verify-session route. Extracted with
+    FastAPI HTTPBearer; HTTPBearer(auto_error=False) is used where the credential is
+    optional and HTTPBearer() where it is mandatory.'
+  default: true
+- id: refreshToken
+  type: apiKey
+  in: cookie
+  description: 'Refresh token supplied as a cookie to the /refresh-token route, which
+    returns a new session token plus a new refresh-token cookie.'
+- id: oidc
+  type: openIdConnect
+  description: 'Dara supports OIDC-backed authentication; the changelog records
+    OpenTelemetry instrumentation covering "authentication and OIDC" as a first-class
+    code path.'
+  evidence: https://raw.githubusercontent.com/causalens/dara/master/packages/dara-core/changelog.md
+- id: basic
+  type: http
+  scheme: basic
+  description: 'BasicAuth configuration for local/simple deployments (dara.core.auth.basic).'
+  evidence: https://dara.causalens.com/docs/generated/dara/reference/dara/core/auth/basic
+routes:
+- path: /verify-session
+  method: POST
+  description: Verify that the request carries a valid session JWT. Designed to be
+    applied as a FastAPI dependency on routes that require a session.
+- path: /refresh-token
+  method: POST
+  description: Exchange a refresh-token cookie for a new session token and a new
+    refresh-token cookie.
+context_accessors:
+- name: USER
+  import: from dara.core.auth import USER
+  description: Current authenticated user; None on unsecured endpoints.
+- name: SESSION
+  import: from dara.core.auth import SESSION
+  description: Current session id; None on unsecured endpoints.
+signing:
+  secret_env: JWT_SECRET
+  notes: 'Production and Docker deployments are documented as needing JWT_SECRET set.
+    Local development reuses a generated development signing key from the user cache
+    when no secret is set. Session storage is configurable via config.auth_session_backend
+    with InMemoryAuthSessionBackend (default) and FileAuthSessionBackend built in.'
+  evidence: https://raw.githubusercontent.com/causalens/dara/master/packages/dara-core/changelog.md
+oauth_scopes: none
+notes: 'No OAuth 2.0 authorization-server metadata is published on any causaLens host
+  (/.well-known/oauth-authorization-server returns 404 on every host that answers
+  honestly). Dara has no scope surface, so scopes/ is intentionally not emitted.'

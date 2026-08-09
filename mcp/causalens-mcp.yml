@@ -1,0 +1,27 @@
+generated: '2026-08-09'
+method: none
+status: none
+source: search
+summary: 'No causaLens MCP server was found. causaLens publishes no hosted or remote
+  Model Context Protocol endpoint, no MCP entry in any public registry, and no MCP
+  documentation on any readable host. No candidate tool list was derived either,
+  because deriving MCP tools requires an OpenAPI to bind them to and causaLens
+  publishes no OpenAPI.'
+searched:
+- target: causaLens documentation and marketing sites
+  result: no MCP reference
+- target: github.com/causalens (9 public repos)
+  result: no MCP server repo
+- target: web search for "causaLens MCP server decisionOS"
+  result: no first-party result
+probed:
+- url: https://dara.causalens.com/.well-known/oauth-authorization-server
+  status: 404
+- url: https://dara.causalens.com/.well-known/oauth-protected-resource
+  status: 404
+- url: https://www.causalens.com/.well-known/ai-plugin.json
+  status: 404
+note: 'This artifact records an honest negative. No `MCPServer` pointer is wired into
+  apis.yml. Note that causaLens markets multi-agent "Digital Knowledge Workers" as
+  its flagship product, so the absence of any agent-facing protocol surface —
+  no MCP, no A2A agent card, no OpenAPI — is a notable gap for an agent-first vendor.'

@@ -1,0 +1,36 @@
+generated: '2026-08-09'
+method: searched
+source: https://raw.githubusercontent.com/causalens/dara/master/AGENTS.md
+summary: 'causaLens publishes a first-party AGENTS.md at the root of the Dara
+  monorepo — provider-authored operating instructions for coding agents working in
+  that repository. It is captured verbatim rather than generated. No packaged Agent
+  Skill was generated for the HTTP surface, because causaLens publishes no OpenAPI
+  to ground operationIds in and this pipeline does not invent them.'
+skills:
+- name: dara-repo-contribution
+  file: causalens-dara-AGENTS.md
+  method: searched
+  provider_authored: true
+  source: https://raw.githubusercontent.com/causalens/dara/master/AGENTS.md
+  description: 'causaLens'' own AGENTS.md for the Dara monorepo: repo layout and
+    Poetry/Anthology dependency rules, the mandatory changelog entry convention
+    (`## NEXT` at the top of the relevant package changelog), how to run dara-core
+    backend tests with the correct env, and the CI checks to validate locally before
+    opening a PR.'
+  covers:
+  - repo-basics
+  - changelog-convention
+  - testing
+  - ci-validation
+  x-evidence:
+    fetched: '2026-08-09'
+    url: https://raw.githubusercontent.com/causalens/dara/master/AGENTS.md
+    http_status: 200
+    bytes: 1977
+x-not-generated:
+  reason: no-openapi
+  detail: 'Agent Skills for API flows must be grounded in real operationIds grepped
+    from a spec. causaLens publishes no OpenAPI on any host, so no API-flow skill was
+    generated. Only the two documented framework routes (POST /verify-session, POST
+    /refresh-token) and the /upload endpoint are publicly known, which is not enough
+    to package a marquee flow honestly.'

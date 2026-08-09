@@ -1,0 +1,135 @@
+generated: '2026-08-09'
+method: searched
+source: https://dara.causalens.com/docs/generated/dara/reference/dara/components/
+docs: https://dara.causalens.com/docs/generated/dara/docs/packages/dara-components/common/introduction
+summary: 'dara-components is causaLens'' first-party embeddable UI component library
+  for the Dara framework. Components are declared in Python and rendered by the
+  matching @darajs/* JavaScript runtime packages. 60+ component reference pages are
+  published across five families.'
+loader_libraries:
+- language: python
+  package: dara-components
+  registry: pypi
+  url: https://pypi.org/project/dara-components/
+- language: javascript
+  package: '@darajs/components'
+  registry: npm
+  url: https://www.npmjs.com/package/@darajs/components
+- language: javascript
+  package: '@darajs/ui-components'
+  registry: npm
+  url: https://www.npmjs.com/package/@darajs/ui-components
+- language: javascript
+  package: '@darajs/ui-causal-graph-editor'
+  registry: npm
+  url: https://www.npmjs.com/package/@darajs/ui-causal-graph-editor
+- language: javascript
+  package: '@darajs/ui-hierarchy-viewer'
+  registry: npm
+  url: https://www.npmjs.com/package/@darajs/ui-hierarchy-viewer
+- language: javascript
+  package: '@darajs/ui-widgets'
+  registry: npm
+  url: https://www.npmjs.com/package/@darajs/ui-widgets
+- language: javascript
+  package: '@darajs/ui-notifications'
+  registry: npm
+  url: https://www.npmjs.com/package/@darajs/ui-notifications
+- language: javascript
+  package: '@darajs/ui-icons'
+  registry: npm
+  url: https://www.npmjs.com/package/@darajs/ui-icons
+families:
+- name: common
+  count: 41
+  docs: https://dara.causalens.com/docs/generated/dara/docs/packages/dara-components/common/introduction
+  components:
+  - accordion
+  - anchor
+  - base_component
+  - bullet_list
+  - button
+  - button_bar
+  - card
+  - carousel
+  - checkbox_group
+  - code
+  - component_select_list
+  - datepicker
+  - dropzone
+  - form
+  - form_page
+  - grid
+  - heading
+  - html_raw
+  - icon
+  - if_cmp
+  - image
+  - input
+  - label
+  - markdown
+  - modal
+  - overlay
+  - paragraph
+  - progress_bar
+  - radio_group
+  - select
+  - slider
+  - spacer
+  - stack
+  - switch
+  - tabbed_card
+  - table
+  - text
+  - textarea
+  - time_utils
+  - tooltip
+  - utils
+- name: smart
+  count: 12
+  description: Higher-level composed components.
+  components:
+  - chat
+  - chat/config
+  - chat/types
+  - code_editor
+  - code_editor/util
+  - data_slicer
+  - data_slicer/data_slicer_modal
+  - data_slicer/extension/data_slicer_filter
+  - data_slicer/extension/filter_status_button
+  - data_slicer/utils/core
+  - data_slicer/utils/plotting
+  - hierarchy
+- name: plotting
+  count: 4
+  docs: https://dara.causalens.com/docs/generated/dara/docs/packages/dara-components/plotting/introduction
+  description: 'Charting integrations with event support (bokeh_events, plotly_events)
+    and a shared plotting palette.'
+  components:
+  - bokeh
+  - bokeh/utils
+  - matplotlib
+  - plotly
+- name: graphs
+  count: 5
+  docs: https://dara.causalens.com/docs/generated/dara/docs/packages/dara-components/graphs/introduction
+  description: Causal-graph visualisation and editing components.
+  components:
+  - base_graph_component
+  - causal_graph_viewer
+  - edge_encoder
+  - node_hierarchy_builder
+  - graphs/graph_layout
+  - graphs/definitions
+x-site-note: 'The Dara site nav exposes a /components landing page, but as of
+  2026-08-09 it is an unpopulated placeholder whose body reads "This will be
+  components page." The real component surface is the generated reference under
+  /docs/generated/dara/reference/dara/components/, which is what this artifact
+  indexes.'
+x-evidence:
+  fetched: '2026-08-09'
+  sitemap: https://dara.causalens.com/sitemap.xml
+  sitemap_status: 200
+  placeholder_url: https://dara.causalens.com/components
+  placeholder_status: 200

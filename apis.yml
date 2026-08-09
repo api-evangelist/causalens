@@ -1,23 +1,115 @@
 aid: causalens
 name: CausaLens
-description: 'CausaLens is a company surfaced via the API Evangelist harvest backlog (source: secondary-market)
-  and added to the network as a stub for full-pipeline profiling.'
+description: 'causaLens is a London-headquartered enterprise AI company and a pioneer
+  of Causal AI — machine intelligence that models cause-and-effect relationships rather
+  than correlation alone. Its commercial platform, decisionOS, is a decision-making
+  operating system that combines causal discovery, causal graph modelling, and multi-agent
+  "Digital Knowledge Workers" that automate repetitive data-science and analyst workflows
+  for enterprises. The platform is delivered as a hosted product plus a Python-first
+  interface, and is distributed through the Microsoft Azure Marketplace and the UK
+  G-Cloud Digital Marketplace. causaLens also maintains Dara, an Apache-2.0 open-source
+  Python application framework for building interactive, decision-support web apps,
+  published on GitHub with packages on PyPI and npm and full public documentation.'
+image: https://avatars.githubusercontent.com/u/40164755?s=200&v=4
 url: https://raw.githubusercontent.com/api-evangelist/causalens/refs/heads/main/apis.yml
 x-type: company
 x-source: harvest:secondary-market
-x-tier: stub
-x-tier-reason: harvest
 specificationVersion: '0.20'
 created: '2026-08-09'
 modified: '2026-08-09'
 tags:
 - Company
-apis: []
+- Artificial Intelligence
+- Causal AI
+- Machine Learning
+- Data Science
+- Decision Intelligence
+- Analytics
+- Agents
+- Open Source
+- Python
+apis:
+- name: Dara Application Framework HTTP API
+  description: 'The HTTP surface exposed by a Dara application. Dara is causaLens''
+    Apache-2.0 open-source Python framework built on FastAPI; each app serves a documented
+    set of built-in routes (session verification, token refresh, file upload) and lets
+    developers register custom REST endpoints with the dara.core.http get/post/put/patch/delete
+    decorators. Dara applications are self-hosted, so there is no single vendor-operated
+    base URL — the base URL is whatever host the operator deploys the app to.'
+  humanURL: https://dara.causalens.com/docs/generated/dara/docs/advanced/custom-endpoints
+  x-deployment: self-hosted
+  x-base-url-note: 'Self-hosted framework — no vendor-operated production host exists.
+    No baseURL is recorded rather than fabricate one; api.causalens.com does not resolve.'
+  tags:
+  - Framework
+  - Python
+  - FastAPI
+  properties:
+  - type: Documentation
+    url: https://dara.causalens.com/docs/generated/dara/docs/getting-started/whats-dara
+  - type: APIReference
+    url: https://dara.causalens.com/docs/generated/dara/reference/dara/core/auth/routes
+  - type: Authentication
+    url: authentication/causalens-authentication.yml
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: DomainSecurity
+  url: security/causalens-domain-security.yml
 - type: Website
-  url: https://www.hiive.com/securities/causalens-stock
+  url: https://causalens.com
+- type: DeveloperPortal
+  url: https://dara.causalens.com
+- type: Documentation
+  url: https://dara.causalens.com/docs/generated/dara/docs/getting-started/whats-dara
+- type: APIReference
+  url: https://dara.causalens.com/docs/generated/dara/reference/dara/core/auth/routes
+- type: GettingStarted
+  url: https://dara.causalens.com/docs/generated/dara/docs/quickstart
+- type: GitHubOrganization
+  url: https://github.com/causalens
+- type: Support
+  url: https://github.com/causalens/dara/issues
+- type: Blog
+  url: https://causalens.com/resource-hub
+- type: SignUp
+  url: https://platform.causalens.com
+- type: PrivacyPolicy
+  url: https://causalens.com/privacy-policy
+- type: TermsOfService
+  url: https://causalens.com/terms
+- type: StatusPage
+  url: https://status.causalens.com
+- type: Packages
+  url: packages/causalens-packages.yml
+- type: SDKs
+  url: packages/causalens-packages.yml
+- type: CLI
+  url: cli/causalens-cli.yml
+- type: Components
+  url: components/causalens-components.yml
+- type: ChangeLog
+  url: changelog/causalens-changelog.yml
+- type: Lifecycle
+  url: lifecycle/causalens-lifecycle.yml
+- type: Authentication
+  url: authentication/causalens-authentication.yml
+- type: Conventions
+  url: conventions/causalens-conventions.yml
+- type: Conformance
+  url: conformance/causalens-conformance.yml
+- type: WellKnown
+  url: well-known/causalens-well-known.yml
+- type: LLMsTxt
+  url: llms/causalens-llms.txt
+- type: AgentSkill
+  url: skills/_index.yml
+x-enrichment:
+  date: '2026-08-09'
+  status: enriched
+  artifacts_added: 14
+  pass: local-v1
+

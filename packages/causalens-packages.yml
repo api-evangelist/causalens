@@ -1,0 +1,178 @@
+generated: '2026-08-09'
+method: searched
+source: https://pypi.org/project/dara-core/ , https://www.npmjs.com/org/darajs , https://github.com/causalens
+notes: 'All first-party packages published by causaLens ship under the Dara open-source
+  framework (Apache-2.0) and the cai-causal-graph research library. The commercial
+  decisionOS platform ships a Python client that is only distributed to authenticated
+  customers (docs.causalens.com is login-gated), so no decisionOS client package is
+  listed here — it is not on any public registry.'
+x-evidence:
+  fetched: '2026-08-09'
+  registries_probed:
+  - npm
+  - pypi
+  - maven-central
+  - nuget
+  - pkg.go.dev
+  - rubygems
+  - packagist
+  - crates.io
+  registries_with_hits:
+  - pypi
+  - npm
+packages:
+- language: python
+  registry: pypi
+  name: dara-core
+  version: 1.29.7
+  url: https://pypi.org/project/dara-core/
+  install: pip install dara-core
+  license: Apache-2.0
+  requires_python: '>=3.10.0,<3.13.0'
+  repository: https://github.com/causalens/dara
+  official: true
+  description: Core of the Dara application framework — the FastAPI-based Python server,
+    variables, actions, routing and auth.
+  x-evidence:
+    url: https://pypi.org/pypi/dara-core/json
+    http_status: 200
+- language: python
+  registry: pypi
+  name: dara-components
+  url: https://pypi.org/project/dara-components/
+  install: pip install dara-components
+  license: Apache-2.0
+  repository: https://github.com/causalens/dara
+  official: true
+  description: Component library for Dara — common UI, plotting (Bokeh/Plotly/Matplotlib),
+    causal-graph and "smart" components.
+  x-evidence:
+    url: https://pypi.org/pypi/dara-components/json
+    http_status: 200
+- language: python
+  registry: pypi
+  name: create-dara-app
+  url: https://pypi.org/project/create-dara-app/
+  install: pip install create-dara-app
+  license: Apache-2.0
+  repository: https://github.com/causalens/dara
+  official: true
+  description: Project scaffolding CLI that bootstraps a new Dara Decision App.
+  x-evidence:
+    url: https://pypi.org/pypi/create-dara-app/json
+    http_status: 200
+- language: python
+  registry: pypi
+  name: cai-causal-graph
+  url: https://pypi.org/project/cai-causal-graph/
+  install: pip install cai-causal-graph
+  repository: https://github.com/causalens/cai-causal-graph
+  official: true
+  description: Causal AI package for constructing and manipulating causal graphs.
+  x-evidence:
+    url: https://pypi.org/pypi/cai-causal-graph/json
+    http_status: 200
+- language: javascript
+  registry: npm
+  name: '@darajs/core'
+  version: 1.29.7
+  url: https://www.npmjs.com/package/@darajs/core
+  install: npm install @darajs/core
+  license: Apache-2.0
+  repository: https://github.com/causalens/dara
+  official: true
+  description: JavaScript/TypeScript client runtime for Dara applications.
+  x-evidence:
+    url: https://registry.npmjs.org/@darajs%2fcore
+    http_status: 200
+- language: javascript
+  registry: npm
+  name: '@darajs/components'
+  url: https://www.npmjs.com/package/@darajs/components
+  install: npm install @darajs/components
+  repository: https://github.com/causalens/dara
+  official: true
+  x-evidence:
+    url: https://registry.npmjs.org/@darajs%2fcomponents
+    http_status: 200
+- language: javascript
+  registry: npm
+  name: '@darajs/ui-components'
+  url: https://www.npmjs.com/package/@darajs/ui-components
+  install: npm install @darajs/ui-components
+  repository: https://github.com/causalens/dara
+  official: true
+  x-evidence:
+    url: https://registry.npmjs.org/@darajs%2fui-components
+    http_status: 200
+- language: javascript
+  registry: npm
+  name: '@darajs/ui-causal-graph-editor'
+  url: https://www.npmjs.com/package/@darajs/ui-causal-graph-editor
+  install: npm install @darajs/ui-causal-graph-editor
+  repository: https://github.com/causalens/dara
+  official: true
+  description: Interactive causal-graph editor/viewer widget.
+  x-evidence:
+    url: https://registry.npmjs.org/@darajs%2fui-causal-graph-editor
+    http_status: 200
+- language: javascript
+  registry: npm
+  name: '@darajs/ui-hierarchy-viewer'
+  url: https://www.npmjs.com/package/@darajs/ui-hierarchy-viewer
+  install: npm install @darajs/ui-hierarchy-viewer
+  repository: https://github.com/causalens/dara
+  official: true
+  x-evidence:
+    url: https://registry.npmjs.org/@darajs%2fui-hierarchy-viewer
+    http_status: 200
+- language: javascript
+  registry: npm
+  name: '@darajs/ui-widgets'
+  url: https://www.npmjs.com/package/@darajs/ui-widgets
+  install: npm install @darajs/ui-widgets
+  repository: https://github.com/causalens/dara
+  official: true
+  x-evidence:
+    url: https://registry.npmjs.org/@darajs%2fui-widgets
+    http_status: 200
+- language: javascript
+  registry: npm
+  name: '@darajs/ui-notifications'
+  url: https://www.npmjs.com/package/@darajs/ui-notifications
+  install: npm install @darajs/ui-notifications
+  repository: https://github.com/causalens/dara
+  official: true
+  x-evidence:
+    url: https://registry.npmjs.org/@darajs%2fui-notifications
+    http_status: 200
+- language: javascript
+  registry: npm
+  name: '@darajs/ui-icons'
+  url: https://www.npmjs.com/package/@darajs/ui-icons
+  install: npm install @darajs/ui-icons
+  repository: https://github.com/causalens/dara
+  official: true
+  x-evidence:
+    url: https://registry.npmjs.org/@darajs%2fui-icons
+    http_status: 200
+- language: javascript
+  registry: npm
+  name: '@darajs/ui-utils'
+  url: https://www.npmjs.com/package/@darajs/ui-utils
+  install: npm install @darajs/ui-utils
+  repository: https://github.com/causalens/dara
+  official: true
+  x-evidence:
+    url: https://registry.npmjs.org/@darajs%2fui-utils
+    http_status: 200
+- language: javascript
+  registry: npm
+  name: '@darajs/styled-components'
+  url: https://www.npmjs.com/package/@darajs/styled-components
+  install: npm install @darajs/styled-components
+  repository: https://github.com/causalens/dara
+  official: true
+  x-evidence:
+    url: https://registry.npmjs.org/@darajs%2fstyled-components
+    http_status: 200

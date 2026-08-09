@@ -1,0 +1,91 @@
+generated: '2026-08-09'
+method: searched
+source: https://raw.githubusercontent.com/causalens/dara/master/packages/dara-core/changelog.md
+docs:
+- https://dara.causalens.com/docs/generated/dara/reference/dara/components/changelog
+- https://dara.causalens.com/docs/generated/dara/reference/create_dara_app/changelog
+scope: 'Dara open-source framework. Per-package changelogs are maintained in-repo
+  and rendered into the public docs. The commercial decisionOS platform publishes no
+  public changelog — its release notes sit behind the login wall at docs.causalens.com.'
+scheme: semver
+per_package_changelogs: true
+current_version:
+  package: dara-core
+  version: 1.29.7
+process: 'Contributors must add entries to the relevant package changelog.md before
+  a PR is merged. New entries go to the top of the file under a `## NEXT` heading,
+  which the release script replaces with the resolved version number.'
+process_source: https://raw.githubusercontent.com/causalens/dara/master/AGENTS.md
+dated: false
+x-dated-note: 'Entries are versioned but NOT dated — the changelog carries no release
+  dates, so a consumer cannot tell when any given version shipped without going to
+  the PyPI/npm release metadata.'
+entries:
+- version: 1.29.7
+  breaking: false
+  highlights:
+  - Added one-at-a-time polling for DerivedVariable and Python components; polling
+    now waits after each request, pauses in hidden tabs, spreads retries with jitter
+    and backoff, honors Retry-After, aborts work on cleanup and drops stale results.
+  - Fixed rapid navigation after early route chunks raising `Deferred already resolved`
+    and leaving the NDJSON body open.
+  - Fixed StreamVariable clean connection closures not reconnecting; added configurable
+    SSE keepalive comments with robust parsing and cleanup.
+  - Fixed FastAPI telemetry cleanup errors when application construction fails.
+- version: 1.29.6
+  breaking: false
+  highlights:
+  - Added a development-only server handshake reporting mismatched projects, with
+    `dara start --dev-port` and `dara dev --port` overrides for Vite's port.
+  - Fixed `dara dev` to use the application's configured static files directory.
+  - Added opt-in, vendor-neutral OpenTelemetry traces, logs and metrics through
+    Pydantic Logfire, covering HTTP, startup/shutdown, authentication and OIDC,
+    actions, WebSockets, internal operations, tasks, workers, scheduled jobs and
+    cross-process W3C propagation, while preserving the existing Prometheus endpoint.
+- version: 1.29.4
+  breaking: false
+  highlights:
+  - Isolated Dara's Prometheus collectors from the process-wide default registry.
+- version: 1.29.3
+  breaking: false
+  highlights:
+  - 'Internal: upgraded build tooling to Vite 8.'
+- version: 1.29.0
+  breaking: false
+  highlights:
+  - '`dara start --reload` preserves browser auth sessions across backend reloads
+    via a local file-backed session store.'
+  - Added configurable auth session storage via `config.auth_session_backend`, with
+    `InMemoryAuthSessionBackend` and `FileAuthSessionBackend` built in.
+  - Local `JWT_SECRET` handling now reuses a generated development signing key from
+    the user cache when no secret is set.
+- version: 1.28.7
+  breaking: false
+  highlights:
+  - Extended metrics to include HTTP request stats.
+- version: 1.28.6
+  breaking: false
+  highlights:
+  - 'Added implicit batching for `@action` handlers: actions within a single execution
+    are collected and applied atomically, so dependent `DerivedVariable` chains only
+    recompute once against the final consistent state.'
+  - Added `ctx.flush()` escape hatch to `ActionCtx` for progressive UI feedback.
+- version: 1.28.5
+  breaking: false
+  highlights:
+  - Added `DARA_POOL_MIN_WORKERS` to keep warm task-pool workers alive.
+  - Added `DARA_POOL_WORKER_TIMEOUT` to configure idle worker reaping.
+  - Fixed `Link` component resuspending despite `suspend_render=False`.
+- version: 1.28.4
+  breaking: false
+  highlights:
+  - Fixed StreamVariable inner HTTP connections not being cancelled on client
+    disconnect, preventing connection leaks.
+- version: 1.28.3
+  breaking: false
+  highlights:
+  - Fixed StreamVariable SSE connections accumulating when dependency values changed.
+x-evidence:
+  fetched: '2026-08-09'
+  url: https://raw.githubusercontent.com/causalens/dara/master/packages/dara-core/changelog.md
+  http_status: 200

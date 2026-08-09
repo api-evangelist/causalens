@@ -1,0 +1,65 @@
+generated: '2026-08-09'
+method: searched
+source: https://status.causalens.com , https://github.com/causalens/dara
+versioning:
+  scheme: semver
+  current:
+    dara-core: 1.29.7
+    '@darajs/core': 1.29.7
+  policy_documented: false
+  notes: 'Packages are released under semantic versioning across PyPI and npm with
+    the Python and JavaScript halves kept at matching version numbers. No written
+    version-support or LTS policy is published.'
+status_page:
+  url: https://status.causalens.com
+  name: decisionOS Status Page
+  scope: commercial decisionOS platform
+  x-evidence:
+    fetched: '2026-08-09'
+    url: https://status.causalens.com
+    http_status: 200
+    title: decisionOS Status Page
+    control_url: https://status.causalens.com/kinlane-control-9931
+    control_status: 404
+    note: 'Control path returns an honest 404, so the 200 on the status page is real
+      and not a catch-all.'
+deprecation:
+  policy_documented: false
+  sunset_header: not-documented
+  deprecation_header: not-documented
+  rfc8594: false
+  mechanism: 'Deprecations are announced only as changelog entries against a semver
+    minor/major release; there is no separate deprecation policy page, no documented
+    notice period, and no RFC 8594 Sunset/Deprecation header support documented for
+    the Dara HTTP surface.'
+  deprecated_operations: []
+  x-gap: 'A written deprecation policy and Sunset/Deprecation header support are both
+    absent. This is a provider gap worth raising: consumers of a self-hosted framework
+    still need a stated support window per major version.'
+sla:
+  published: false
+  notes: 'No public SLA. decisionOS is sold via enterprise contract (Microsoft Azure
+    Marketplace and UK G-Cloud Digital Marketplace listings), where terms are
+    negotiated per-agreement.'
+support_channels:
+- type: github-issues
+  url: https://github.com/causalens/dara/issues
+  x-evidence:
+    http_status: 200
+- type: sales
+  url: https://causalens.com/book-a-demo
+  x-evidence:
+    http_status: 200
+x-placeholder-pages:
+  note: 'The Dara documentation site links a Roadmap and a Community page from its
+    top-level nav, but as of 2026-08-09 both render unpopulated placeholder text
+    ("This will be roadmap page." / "This will be community page."). They return
+    HTTP 200 but carry no content, so no Roadmap or community Support pointer was
+    wired from them.'
+  urls:
+  - url: https://dara.causalens.com/roadmap
+    status: 200
+    content: placeholder
+  - url: https://dara.causalens.com/community
+    status: 200
+    content: placeholder

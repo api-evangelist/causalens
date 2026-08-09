@@ -1,0 +1,108 @@
+generated: '2026-08-09'
+method: searched
+source: https://dara.causalens.com/docs/generated/dara/docs/advanced/custom-endpoints
+docs:
+- https://dara.causalens.com/docs/generated/dara/docs/advanced/custom-endpoints
+- https://dara.causalens.com/docs/generated/dara/docs/advanced/cache-policies
+- https://dara.causalens.com/docs/generated/dara/docs/advanced/progress-tracking
+- https://dara.causalens.com/docs/generated/dara/docs/advanced/heavy-io
+- https://dara.causalens.com/docs/generated/dara/reference/dara/core/auth/routes
+scope: 'Dara open-source application framework (FastAPI-based). The commercial
+  decisionOS API''s conventions are not covered — its docs are login-gated.'
+authentication:
+  style: bearer-jwt
+  header: Authorization
+  default: 'Endpoints registered with the dara.core.http decorators are authenticated
+    by default (authenticated=True); pass authenticated=False to opt out.'
+  refresh: Cookie-borne refresh token exchanged at POST /refresh-token.
+  see: authentication/causalens-authentication.yml
+idempotency:
+  supported: false
+  header: none
+  notes: 'No idempotency key header, no request-replay/deduplication semantics and
+    no retry-safety contract are documented for Dara custom endpoints. Client-side
+    polling for DerivedVariable results does implement retry with jitter, backoff
+    and Retry-After handling, and drops stale results — but that is transport-level
+    retry behaviour inside the framework runtime, NOT an idempotency guarantee a
+    developer can rely on for their own POST endpoints.'
+  x-gap: 'Provider gap. No `type: Idempotency` pointer is emitted, because emitting
+    one would credit a guarantee that is not published.'
+http_methods:
+  supported:
+  - GET
+  - POST
+  - PUT
+  - PATCH
+  - DELETE
+  registration: '@get / @post / @put / @patch / @delete decorators from dara.core.http,
+    or explicitly via config.add_endpoint().'
+  decorator_parameters:
+  - name: url
+    type: str
+    description: Path where the endpoint is exposed.
+  - name: dependencies
+    type: List[DependsType]
+    default: '[]'
+    description: FastAPI dependencies applied to the endpoint.
+  - name: authenticated
+    type: bool
+    default: 'true'
+    description: When true, attaches the framework security dependencies.
+pagination:
+  style: not-documented
+  notes: 'No framework-level pagination convention is documented for custom endpoints;
+    data access goes through DataVariable/DerivedDataVariable and a polars LazyFrame
+    wrapper rather than a paged HTTP contract.'
+error_envelope:
+  style: fastapi-default
+  format: 'application/json with a `detail` field (FastAPI HTTPException default).
+    No RFC 9457 application/problem+json usage is documented.'
+  rfc9457: false
+rate_limiting:
+  documented: false
+  headers: none
+caching:
+  documented: true
+  docs: https://dara.causalens.com/docs/generated/dara/docs/advanced/cache-policies
+  notes: 'Dara exposes cache policies for DerivedVariable/DataVariable computation
+    (an application-state cache), not HTTP response-cache directives.'
+streaming:
+  supported: true
+  mechanisms:
+  - name: Server-Sent Events
+    notes: 'StreamVariable uses SSE with configurable keepalive comments; connection
+      lifecycle, reconnection and cleanup are handled by the runtime.'
+  - name: NDJSON
+    notes: Route chunk delivery uses an NDJSON body.
+  - name: WebSockets
+    notes: 'WebSocket transport is instrumented in the OpenTelemetry integration,
+      confirming it is a first-class channel in the runtime.'
+observability:
+  tracing:
+    standard: OpenTelemetry
+    vendor_neutral: true
+    via: Pydantic Logfire
+    opt_in: true
+    coverage: 'HTTP, application startup and shutdown, authentication and OIDC,
+      actions, WebSockets, internal operations, tasks, workers, scheduled jobs,
+      cross-process W3C context propagation.'
+  context_propagation: W3C Trace Context
+  metrics:
+    standard: Prometheus
+    notes: 'Prometheus endpoint with HTTP request stats; collectors isolated from the
+      process-wide default registry as of 1.29.4.'
+  request_id: 'Not a distinct header — request correlation is carried by W3C trace
+    context via the OpenTelemetry integration.'
+versioning:
+  api_versioning: none
+  notes: 'The HTTP surface is not URL- or header-versioned; it moves with the
+    framework package version (semver).'
+  see: lifecycle/causalens-lifecycle.yml
+file_upload:
+  endpoint: /upload
+  used_by: UploadDropzone component
+cross_links:
+  authentication: authentication/causalens-authentication.yml
+  lifecycle: lifecycle/causalens-lifecycle.yml
+  changelog: changelog/causalens-changelog.yml
+  conformance: conformance/causalens-conformance.yml
