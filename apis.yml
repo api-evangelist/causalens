@@ -10,6 +10,17 @@ description: 'causaLens is a London-headquartered enterprise AI company and a pi
   G-Cloud Digital Marketplace. causaLens also maintains Dara, an Apache-2.0 open-source
   Python application framework for building interactive, decision-support web apps,
   published on GitHub with packages on PyPI and npm and full public documentation.'
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: false
+  label: Hosted service · you call their endpoint
+  confidence: medium
+  source:
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 image: https://avatars.githubusercontent.com/u/40164755?s=200&v=4
 url: https://raw.githubusercontent.com/api-evangelist/causalens/refs/heads/main/apis.yml
 x-type: company
