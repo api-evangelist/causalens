@@ -48,12 +48,12 @@ tags:
 - Company
 - Artificial Intelligence
 - Causal AI
-- Machine-Learning
+- Machine Learning
 - Data Science
 - Decision Intelligence
 - Analytics
 - Agents
-- Open-Source
+- Open Source
 - Python
 tags_raw:
 - Company
@@ -66,6 +66,8 @@ tags_raw:
 - Agents
 - Open Source
 - Python
+- Machine-Learning
+- Open-Source
 apis:
 - name: Dara Application Framework HTTP API
   description: 'The HTTP surface exposed by a Dara application. Dara is causaLens''
