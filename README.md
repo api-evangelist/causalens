@@ -64,5 +64,100 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-CausaLens is a company surfaced via the API Evangelist harvest backlog (source: secondary-market) and added to the network as a stub for full-pipeline profiling.
-- https://www.hiive.com/securities/causalens-stock
+causaLens is a London-headquartered enterprise AI company and a pioneer of Causal AI — machine intelligence that models cause-and-effect relationships rather than correlation alone. Its commercial platform, decisionOS, is a decision-making operating system that combines causal discovery, causal graph modelling, and multi-agent "Digital Knowledge Workers" that automate repetitive data-science and analyst workflows for enterprises. The platform is delivered as a hosted product plus a Python-first interface, and is distributed through the Microsoft Azure Marketplace and the UK G-Cloud Digital Marketplace. causaLens also maintains Dara, an Apache-2.0 open-source Python application framework for building interactive, decision-support web apps, published on GitHub with packages on PyPI and npm and full public documentation.
+
+**Areas:** Company · Artificial Intelligence · Causal AI · Machine Learning · Data Science · Decision Intelligence · Analytics · Agents · Open Source · Python
+
+## CausaLens on APIs.io
+
+Everything profiled for CausaLens is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/causalens/](https://apis.io/providers/causalens/)** — or go straight to one of the APIs or properties below.
+
+### APIs (1)
+
+- [Dara Application Framework HTTP API](https://apis.io/apis/causalens/dara-application-framework-http-api/) — The HTTP surface exposed by a Dara application. Dara is causaLens' Apache-2.0 open-source Python framework built on FastAPI; each app serves a documented…
+
+### Published properties
+
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
+
+#### MCP servers (1)
+
+Model Context Protocol servers that expose the API to agents.
+
+- [causalens-mcp.yml](https://apis.io/servers/causalens/causalens-mcp-yml/)
+
+#### Security (2)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Causalens Authentication](https://apis.io/security/causalens/causalens-authentication/)
+- [Causalens Domain Security](https://apis.io/security/causalens/causalens-domain-security/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://causalens.com)
+- [Documentation](https://dara.causalens.com/docs/generated/dara/docs/getting-started/whats-dara)
+- [Getting started](https://dara.causalens.com/docs/generated/dara/docs/quickstart)
+- [API reference](https://dara.causalens.com/docs/generated/dara/reference/dara/core/auth/routes)
+- [Sign up](https://platform.causalens.com)
+- [Support](https://github.com/causalens/dara/issues)
+- [Blog](https://causalens.com/blogs)
+- [Terms of service](https://causalens.com/terms)
+- [Privacy policy](https://causalens.com/privacy-policy)
+- [GitHub](https://github.com/causalens)
+- [Status](https://status.causalens.com)
+
+## API Evangelist rating
+
+**Kin Score 34.1** — thin · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 64.3 |
+| Contract quality | 0.0 |
+| Contract governance | 18.2 |
+| Operational transparency | 34.2 |
+| Developer ergonomics | 78.6 |
+| Access clarity | 21.1 |
+
+**Agent readiness 9.0** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | — |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | — |
+| Event Surface Described | — |
+| Agent Skills | yes |
+| Well Known Catalog | yes |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 22.7** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/causalens/](https://apis.io/providers/causalens/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for CausaLens: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/causalens/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
